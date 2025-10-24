@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myths | TerraVault</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <script src="{{ url_for('static', filename='home.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Myths</h1>
+            <p>Explore the world's most mysterious myths and legends.</p>
+        </header>
+
+        <nav>
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('environment') }}">Environment</a>
+            <a href="{{ url_for('cosmos') }}">Cosmos</a>
+            <a href="{{ url_for('disasters') }}">Disasters</a>
+            <a href="{{ url_for('human_impact') }}">Human Impact</a>
+            <a href="{{ url_for('myths') }}" style="background:rgba(255,255,255,0.3);">Myths</a>
+        </nav>
+
+        <form action="{{ url_for('home') }}" method="get" class="search-form">
+            <input type="text" name="q" placeholder="Search...">
+            <button type="submit">Go</button>
+        </form>
+
+        <section class="featured">
+            <h2>Legendary Mysteries</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='bermuda.jpg') }}" alt="Bermuda Triangle">
+                    <h3>Bermuda Triangle</h3>
+                    <p>A region in the western Atlantic Ocean where ships and planes are said to mysteriously vanish, sparking countless theories and legends.</p>
+                    <a href="/article/bermuda-triangle">Read More</a>
+                </div>
+                <div class="card">
+                    <img src="{{ url_for('static', filename='atlantis.jpg') }}" alt="Atlantis">
+                    <h3>Atlantis</h3>
+                    <p>The legendary lost city described by Plato, believed to have sunk beneath the waves in a single day and night of misfortune.</p>
+                    <a href="{{ url_for('atlantis') }}">Read More</a>
+                </div>
+                <div class="card">
+                    <img src="{{ url_for('static', filename='loch-ness.jpg') }}" alt="Loch Ness Monster">
+                    <h3>Loch Ness Monster</h3>
+                    <p>A mysterious creature said to inhabit Scotland's Loch Ness, captivating imaginations and fueling debates for generations.</p>
+                    <a href="/article/loch-ness-monster">Read More</a>
+                </div>
+                <div class="card">
+                    <img src="{{ url_for('static', filename='el-dorado.jpg') }}" alt="El Dorado">
+                    <h3>El Dorado</h3>
+                    <p>The mythical city of gold sought by explorers for centuries, inspiring tales of adventure and obsession in the heart of South America.</p>
+                    <a href="/article/el-dorado">Read More</a>
+                </div>
+                <div class="card">
+                    <img src="{{ url_for('static', filename='yeti.jpg') }}" alt="Yeti">
+                    <h3>Yeti</h3>
+                    <p>Also known as the Abominable Snowman, this elusive creature is said to roam the snowy peaks of the Himalayas, leaving only footprints behind.</p>
+                    <a href="/article/yeti">Read More</a>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 TerraVault | Exploring the past, present & future of Earth.</p>
+            <p>Email: <a href="mailto:rajutkarsh1910@gmail.com">rajutkarsh1910@gmail.com</a></p>
+            <p>
+                <a href="/feedback">Feedback</a> |
+                <a href="mailto:rajutkarsh1910@gmail.com">Contact</a> |
+                <a href="/discussion">Discussion</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

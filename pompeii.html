@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pompeii Volcano - TerraVault</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+  <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+  <style>
+    /* === Article Page Enhancements === */
+    article {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+      padding: 24px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-light);
+      margin: 20px auto;
+      max-width: 800px;
+      color: inherit;
+      line-height: 1.7;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.dark-mode article {
+      background: rgba(20, 20, 20, 0.7);
+      box-shadow: var(--shadow-dark);
+    }
+
+    article h2 {
+      text-align: center;
+      margin-bottom: 18px;
+      font-size: 1.8rem;
+    }
+
+    .article-img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: var(--radius);
+      margin-bottom: 25px;
+      box-shadow: var(--shadow-dark);
+    }
+
+    .article-img-container {
+      margin-bottom: 25px;
+      box-shadow: var(--shadow-dark);
+      border-radius: var(--radius);
+      overflow: hidden; /* To apply border-radius to the image inside */
+    }
+
+    .comment-section {
+      margin: 40px auto;
+      max-width: 800px;
+      padding: 24px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-light);
+    }
+
+    .comment-section h3 {
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    .comment-section form input[type="text"],
+    .comment-section form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 5px;
+      background: rgba(0, 0, 0, 0.1);
+      color: var(--text-color);
+    }
+
+    .comment-section form button {
+      /* Reusing button style from home.css */
+      display: inline-block;
+      padding: 10px 20px;
+      background: var(--accent-color);
+      color: var(--background-color);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .comment-section form button:hover {
+      background: var(--text-color);
+      color: var(--background-color);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><a href="{{ url_for('home') }}">TerraVault</a></h1>
+      <p>Exploring Earth’s mysteries & beyond.</p>
+    </header>
+
+    <article>
+      <h2>The Fiery Fate of Pompeii 🔥</h2>
+      <div class="article-img-container">
+        <img src="{{ url_for('static', filename='pompeii.jpg') }}" alt="Pompeii Volcano" class="article-img">
+      </div>
+
+      <p>Imagine living in a thriving Roman city with theaters, baths, and bakeries... and one ordinary day, your friendly neighborhood mountain decides to explode. That’s Pompeii in AD 79! Mount Vesuvius erupted with unimaginable force, burying the city under tons of ash and rock. The citizens, frozen in time, became eerie reminders of nature’s power.</p>
+
+      <p>Centuries later, archaeologists uncovered this ghostly city almost perfectly preserved—pots still on stoves, art on walls, and people mid-step. Walking through Pompeii today feels like stepping into a paused movie from 2,000 years ago. It's a haunting yet mesmerizing glimpse into ancient life.</p>
+
+      <p>So next time you see a volcano documentary, remember—Pompeii wasn’t just destroyed. It was immortalized.</p>
+    </article>
+
+    <section class="comment-section">
+      <h3>💬 Join the Discussion</h3>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <textarea placeholder="Share your thoughts about Pompeii..." required></textarea>
+        <button type="submit">Post Comment</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 TerraVault | Exploring the past, present & future of Earth.</p>
+    </footer>
+  </div>
+  <script src="{{ url_for('static', filename='home.js') }}"></script>
+</body>
+</html>
